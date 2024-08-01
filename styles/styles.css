@@ -1,0 +1,49 @@
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes background {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+.animate-background {
+    background-size: 400% 400%;
+    animation: none; /* Sin animación por defecto */    
+    background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234)); /* Definición explícita del gradiente */
+}
+
+  
+.animate-background:hover {
+    animation: background 4s ease infinite; /* Animación activa en hover */
+}
+
+/* Variables CSS para estilos comunes */
+:root {
+    --background-size: cover;
+    --background-position: center;
+    --background-repeat: no-repeat; 
+}
+
+/* Estilos para imágenes de fondo */
+.background-image {
+    background-size: var(--background-size);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+    filter: var(--brightness-filter);
+    transition: filter 0.3s ease; /* Suaviza el cambio de brillo */
+}
+
+.background-image:hover {
+    filter: var(--brightness-filter-hover); /* Oscurecimiento adicional en hover */
+}
+
+/* Definición para cada imagen de fondo */
+.background-image-1 { background-image: url('../imgs/Proyectos/Detectron2.png');}
+.background-image-2 { background-image: url('../imgs/Proyectos/YOLOv8_Futbol.png'); }
+.background-image-3 { background-image: url('ruta/a/imagen3.jpg'); }
+.background-image-4 { background-image: url('ruta/a/imagen4.jpg'); }
+.background-image-5 { background-image: url('ruta/a/imagen5.jpg'); }
+.background-image-6 { background-image: url('ruta/a/imagen6.jpg'); }
